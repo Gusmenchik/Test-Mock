@@ -1,10 +1,9 @@
-package ru.netology;
+package ru.netology.geo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.netology.entity.Country;
-import ru.netology.geo.GeoServiceImpl;
 
 public class GeoServiceTest {
     static GeoServiceImpl service;
@@ -18,8 +17,12 @@ public class GeoServiceTest {
     }
 
     @Test
-    void byIpTest() {
+    void byIpRussiaTest() {
         Assertions.assertEquals(service.byIp(russianIp).getCountry(), Country.RUSSIA);
+    }
+
+    @Test
+    void byIpUSATest() {
         Assertions.assertEquals(service.byIp(usaIp).getCountry(), Country.USA);
     }
 
